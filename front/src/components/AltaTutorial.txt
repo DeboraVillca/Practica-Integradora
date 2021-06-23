@@ -1,0 +1,58 @@
+import React,{useState} from 'react'
+
+
+const AltaTutorial =({agregarTutorial})=>{
+
+    const [nombreInput, setNombreInput] = useState('')
+    const [urlInput, setUrlInput] = useState('')
+    const [tipoInput, setTipoInput] = useState('')
+    // const cambio= (e)=>{
+    //     setTutorialInput(e.currentTarget.value)
+    // }
+    // const cambioUrl=(e)=>{
+    //     setUrl(e.currentTarget.value)
+    // }
+    // const cambioTipo=(e)=>{
+    //     setTipo(e.currentTarget.value)
+    // }
+    // const alEnviar=(e)=>{
+    //         agregarTutorial(tutorialInput);
+    //         setTutorialInput("");
+            
+    // }
+
+    const cambioNombre = (e) => {
+        setNombreInput(e.currentTarget.value)
+    }
+    const cambioUrl = (e) => {
+        setUrlInput(e.currentTarget.value)
+    }
+    const cambioTipo = (e) => {
+        setTipoInput(e.currentTarget.value)
+    }
+
+    const alEnviar = (e) => {
+        e.preventDefault();
+        if (nombreInput.length > 3 ) {
+            agregarTutorial(nombreInput, urlInput,tipoInput);
+            setNombreInput("");
+            setTipoInput("");
+            setUrlInput("");
+        }
+    }
+    return (
+        <div>
+            <form onSubmit={alEnviar}>
+                <input value={nombreInput} type="text" onChange={cambioNombre} placeholder="Ingrese nombre de tutorial"/>
+                <input value={urlInput} type="text" onChange={cambioUrl} placeholder="Ingrese url de tutorial"/>
+                <select value={tipoInput} onChange={cambioTipo}>
+                    <option value="Programacion">Programacion</option>
+                    <option value="Matematica">Matematica</option>
+                    <option value="Clase Grabada">Clase Grabada</option>
+                </select>
+                <button>Agregar Tutorial</button>
+            </form>
+        </div>
+    )
+}
+export default AltaTutorial

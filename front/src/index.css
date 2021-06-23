@@ -1,0 +1,31 @@
+.main {
+  align-items: center;
+  background:linear-gradient( 70deg, rgb(243, 241, 243),rgb(184, 161, 228));
+  height: 500vh;
+  padding: 100px;
+
+}
+.titulo{
+  background: purple;
+  text-align: center;
+}
+.tutoriales{
+ 
+background: #f7e8e8;
+border-radius: 4px;
+max-width: 700px;
+padding: 5px;
+}
+
+.tutorial {
+   font-style: initial;
+  align-items: center;
+  background: #c390ec;
+  border-radius: 2px;
+  box-shadow: 1px 1px 1px;
+  display:flex;
+  font-size: 15px;
+  justify-content: space-between;
+  margin-bottom: 3px;
+  padding: 5px 10px;
+}
